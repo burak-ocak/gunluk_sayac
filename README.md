@@ -1,1 +1,1 @@
-# gunluk_sayac
+# Bu proje, günlük kaç saat ders çalıştığımı ve bunları hafızasında tutması için oluşturulmuş bir proje dosyasıdır.
