@@ -15,6 +15,7 @@ let hour = 00;
 btnBasla.addEventListener("click", function(){
     clearInterval(Interval);
     Interval = setInterval(zamanArttir, 1000);
+    btnBasla.textContent = "Başlat";
 });
 
 btnDurdur.addEventListener("click", function(){
