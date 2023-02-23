@@ -1,21 +1,29 @@
+*{
+    font-size: 50px;
+}
 body{
     background-color: #ccc;
 }
-.zaman{
-    font-size: 100px;
-}
-
-.buton{
-    width: 200px;
-    margin: 30px;
-    height: 100px;
-    font-size: larger;
-    font-weight: bolder;
-    color: white;
-    border-radius: 30px;
-}
-#sayac{
+.baslik{
     display: flex;
     justify-content: center;
-    font-size: 50px;
+}
+.butonlar{
+    display: flex;
+    justify-content: center;
+}
+.buton{
+    margin: 10px;
+    border: 5px solid white;
+    color: black;
+    width: 500px;
+}
+.buton:hover{
+    background-color: antiquewhite;
+    border-color: black;
+    color: cadetblue;
+}
+.sayac{
+    display: flex;
+    justify-content: center;
 }

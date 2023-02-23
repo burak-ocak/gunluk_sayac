@@ -1,71 +1,69 @@
-let btnBasla = document.querySelector("#btnBaslat");
+let btnBaslat = document.querySelector("#btnBaslat");
 let btnDurdur = document.querySelector("#btnDurdur");
 let btnBitir = document.querySelector("#btnBitir");
 
-let saat = document.querySelector("#saat");
-let dakika = document.querySelector("#dakika");
 let saniye = document.querySelector("#saniye");
+let dakika = document.querySelector("#dakika");
+let saat = document.querySelector("#saat");
+
+let second = 00;
+let minute = 00;
+let hour = 00;
 
 let Interval;
 
-let sec = 00;
-let min = 00;
-let hour = 00;
-
-btnBasla.addEventListener("click", function(){
+btnBaslat.addEventListener("click", function(){
     clearInterval(Interval);
-    Interval = setInterval(zamanArttir, 1000);
-    btnBasla.textContent = "Başlat";
+    Interval = setInterval(sayac, 1000);
+    btnBaslat.textContent = "Başlat";
 });
 
 btnDurdur.addEventListener("click", function(){
     clearInterval(Interval);
-    btnBasla.textContent = "Devam et";
+    btnBaslat.textContent = "Devam et";
 });
 
 btnBitir.addEventListener("click", function(){
+    let deneme = saat.textContent + ": " + dakika.textContent + ": " +  saniye.textContent;
+    console.log(deneme);
     clearInterval(Interval);
 
-    sec = 00;
-    min = 00;
-    hour = 00;
-
-    saat.textContent = "00";
-    dakika.textContent = "00";
     saniye.textContent = "00";
-})
+    dakika.textContent = "00";
+    saat.textContent = "00";
 
+    second = 00;
+    minute = 00;
+    hour = 00;
+});
 
+function sayac(){
+    second++;
 
-function zamanArttir(){
-    sec++;
-
-    if(sec > 9){
-        saniye.textContent = sec;
+    if(second > 9){
+        saniye.textContent = second;
     }else{
-        saniye.textContent = "0" + sec;
+        saniye.textContent = "0" + second;
     };
 
-    if(sec > 59){
-        sec = 00;
-        saniye.textContent = "0" + sec;
-        min++;
-    }
-
-    
-    if(min > 9){
-        dakika.textContent = min;
-    }else{
-        dakika.textContent = "0" + min;
+    if(second > 59){
+        second = 00;
+        saniye.textContent = "0" + second;
+        minute++;
     };
 
-    if(min > 59){
-        min = 00;
-        dakika.textContent = "0" + min;
+    if(minute > 9){
+        dakika.textContent = minute;
+    }else{
+        dakika.textContent = "0" + minute;
+    };
+
+    if(minute > 59){
+        minute = 00;
+        dakika.textContent = "0" + minute;
         hour++;
     };
 
-    
     if(hour > 9){
         saat.textContent = hour;
     }else{
