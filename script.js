@@ -16,14 +16,27 @@ btnBaslat.addEventListener("click", function(){
     clearInterval(Interval);
     Interval = setInterval(sayac, 1000);
     btnBaslat.textContent = "Başlat";
+    btnBaslat.style.backgroundColor = "red";
+    btnBaslat.style.color = "white";
+    btnDurdur.style.backgroundColor = "";
+    btnDurdur.style.color = "";
 });
 
 btnDurdur.addEventListener("click", function(){
     clearInterval(Interval);
     btnBaslat.textContent = "Devam et";
+    btnDurdur.style.backgroundColor = "red";
+    btnDurdur.style.color = "white";
+    btnBaslat.style.backgroundColor = "";
+    btnBaslat.style.color = "";
 });
 
 btnBitir.addEventListener("click", function(){
+    btnBaslat.style.backgroundColor = "";
+    btnBaslat.style.color = "";
+    btnDurdur.style.backgroundColor = "";
+    btnDurdur.style.color = "";
+    
     let deneme = saat.textContent + ": " + dakika.textContent + ": " +  saniye.textContent;
     console.log(deneme);
     clearInterval(Interval);
